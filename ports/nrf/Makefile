@@ -83,8 +83,8 @@ ifeq ($(DEBUG), 1)
 CFLAGS += -O1 -ggdb
 LDFLAGS += -O1
 else
-CFLAGS += -Os -DNDEBUG
-LDFLAGS += -Os
+CFLAGS += -Os -DNDEBUG -flto
+LDFLAGS += -Os -flto
 endif
 
 LIBM_FILE_NAME   = $(shell $(CC) $(CFLAGS) -print-file-name=libm.a)
